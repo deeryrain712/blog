@@ -1,0 +1,33 @@
+.index{font-size:12px;font-family:'Open sans',sans-serif}
+.index h2{font-weight:bold;font-size:14px;border-bottom:3px solid #8a6d97;margin-bottom:1px;padding:4px 0}
+.index .img-thumb{float:left;margin-right:1px}
+.index .img-thumb img{width:1280px;height:730px;border:1px solid #E7E7E7;padding:4px;background:#1f2024}
+.index .inf-inc .lol{line-height:25px;padding:0 5px;border-bottom:1px solid #FFF;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.index .inf-inc .lol:nth-child(odd){background:#1f2024}
+.index .inf-inc .lol:nth-child(even){background:#1f2024}
+.index .inf-inc .lol b{display:block;float:left;width:95px}
+.index .inf-inc .lol a{color:#e7e8e9;text-decoration:none}
+.index .synopsis{text-align:justify;font-size:14px;margin:1px 0;border:1px solid #8a6d97;padding:10px}
+.index .sinopsiss{font-size:12px}
+.index .sinopsiss p{margin:1em 0!important;line-height:20px}
+.index ul.last-post-wrap{position:relative;margin:0;list-style:none}
+.index ul.last-post-wrap:before{content:'\f07c  Episode List';display:block;font-family:fontawesome,sans-serif;font-weight:700;padding:10px 5px;border-bottom:3px solid #8a6d97}
+.lol b:hover{transform:none}
+.index ul.last-post-wrap:after{content:'Tanggal';top:0;position:absolute;right:0;font-weight:700;padding:10px 35px}
+.index li.last-post-item{line-height:25px;padding:0 5px;border-bottom:1px solid #e7e8e9;margin:0}
+.index li.last-post-item:nth-child(odd){background:#1f2024}
+.index li.last-post-item:nth-child(even){background:#1f2024}
+.index span.post-update{float:right;padding:0!important;margin:0!important;display:inline-block!important}
+.index .post_item{display:inline-block;width:500px;vertical-align:bottom;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.index .post_item a{color:#e7e8e9;font-weight:700}
+.index .post_item a:hover{color:#8a6d97}
+
+@media screen and (max-width:728px){
+.index .inf-wrap{overflow:hidden;display:block;clear:both}
+.index .inf-wrap .img-thumb{float:none;margin:auto;display:block;text-align:center}
+.index .inf-wrap .inf-inc{overflow:hidden;display:block}
+.index ul.last-post-wrap{display:block;overflow:hidden;clear:both}
+.index ul.last-post-wrap li{}
+.index ul.last-post-wrap li .post_item{display:block;width:100%}
+.index ul.last-post-wrap li span.post-update{display:none!important;float:none}
+}
