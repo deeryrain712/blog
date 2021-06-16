@@ -5,7 +5,7 @@
 .image .tombol {
     background:#8a6d97;
     color:#fff;
-    display:inline-block; cursor:pointer; font:normal 600 14px Tahoma,sans-serif; padding:0px; border:none; outline:none; line-height:20px; border-radius:3px; -moz-border-radius:3px;
+    display:inline-block; cursor:pointer; font:normal 650 14px Quicksand,sans-serif; padding:0px; border:none; outline:none; line-height:20px; border-radius:3px; -moz-border-radius:3px;
 }
 .image .tombol:focus {
     pointer-events:none;
