@@ -2,8 +2,8 @@
 padding-top:8pt;
 padding-bottom:8pt;
 padding-left:15pt;
-padding-right:15pt;
-color:white;
+padding-right:20pt;
+color:#e7e8e9;
 border-radius:8px;
 border:5px solid #0f1012;
 text-align:left;
@@ -18,5 +18,5 @@ color:#8a6d97;
 }
 .warn .isi {
 color:#e7e8e9;
-text-align:justify;
+text-align:left;
 }
