@@ -20,7 +20,7 @@
     color:#fff
 }
 .image .isi {
-    background:transparent;
+    background:transparent; border:1px solid #8a6d97;
     pointer-events:auto; visibility:hidden; opacity:0; height:0px; transition:all .5s ease;
 }
 .image .tombol:focus + .isi {
