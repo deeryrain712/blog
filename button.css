@@ -14,7 +14,7 @@ background: #8a6d97;
 border-radius: 7px;
 text-align: center;
 text-decoration: none;
-font: 17px/50px Helvetica, Verdana, sans-serif;
+font: 17px/50px Quicksand, sans-serif;
 font-weight: bold;
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=&amp;amp;#39;#00b7ea&amp;amp;#39;, endColorstr=&amp;amp;#39;#009ec3&amp;amp;#39;,GradientType=0 );
 }
@@ -33,7 +33,7 @@ height: 40px;
 background: #292f33;
 color: #fff;
 text-align: center;
-font: 12px/45px Helvetica, Verdana, sans-serif, bold;
+font: 12px/45px Quicksand, sans-serif, bold;
 font-weight: bold;
 -webkit-transition: margin 0.5s ease;
 -moz-transition: margin 0.5s ease;
