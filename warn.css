@@ -5,11 +5,11 @@ padding-left:15pt;
 padding-right:20pt;
 color:#e7e8e9;
 border-radius:8px;
-border:5px solid #0f1012;
+border:3px solid #0f1012;
 text-align:left;
 }
 .warn:before { 
-font-size: 12pt;
+font-size: 14pt;
 font-weight: 1000;
 }
 .warn:before {
@@ -19,4 +19,5 @@ color:#8a6d97;
 .warn .isi {
 color:#e7e8e9;
 text-align:left;
+font-size: 12pt;
 }
