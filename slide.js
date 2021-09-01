@@ -1,18 +1,18 @@
-	var cssSlidy = function(newOptions) {
+	var cssSlide = function(newOptions) {
     var options = (function() {
         var mergedOptions = {},
         defaultOptions = {
             timeOnSlide: 3,
             timeBetweenSlides: 1,
-            slidyContainerSelector: '#slidy-container', // name of slider container
-            slidySelector: '#slidy', // name of slider
-            slidyDirection: 'left', // options: left, right
+            slideContainerSelector: '#slidy-container', // name of slider container
+            slideSelector: '#slide', // name of slider
+            slideDirection: 'left', // options: left, right
             fallbackFunction: function() {},
-            cssAnimationName: 'slidy',
+            cssAnimationName: 'slide',
             captionSource: 'data-caption', // options: data-caption, alt, none
             captionBackground: 'rgba(0,0,0,0.3)',
             captionColor: '#fff',
-            captionFont: 'Avenir, Avenir Next, Droid Sans, DroidSansRegular, Corbel, Tahoma, Geneva, sans-serif',
+            captionFont: 'Quicksand, Nunito, sans-serif',
             captionPosition: 'bottom', // options: top, bottom
             captionAppear: 'slide', //  options: slide, perm, fade
             captionSize: '1.6rem', // same units
@@ -28,7 +28,7 @@
     CS.keyframeprefix = '';
     CS.domPrefixes = 'Webkit Moz O Khtml'.split(' ');
     CS.pfx = '';
-    CS.element = document.getElementById(options.slidySelector.replace('#', ''));
+    CS.element = document.getElementById(options.slideSelector.replace('#', ''));
     CS.init = (function() {
         // browser supports keyframe animation w/o prefixes
         if (CS.element.style.animationName !== undefined) CS.hasAnimation = true;
@@ -70,25 +70,25 @@
                 }
             }
             var figs = CS.element.getElementsByTagName("figure");
-            var firstFig = figs[0]; // get the first figure inside the "slidy" element.
+            var firstFig = figs[0]; // get the first figure inside the "slide" element.
             figWrap = firstFig.cloneNode(true); // copy it.
             CS.element.appendChild(figWrap); // add the clone to the end of the images
             var imgCount = images.length, // count the number of images in the slide, including the new cloned element
                 totalTime = (options.timeOnSlide + options.timeBetweenSlides) * (imgCount - 1), // calculate the total length of the animation by multiplying the number of _actual_ images by the amount of time for both static display of each image and motion between them
                 slideRatio = (options.timeOnSlide / totalTime) * 100, // determine the percentage of time an induvidual image is held static during the animation
                 moveRatio = (options.timeBetweenSlides / totalTime) * 100, // determine the percentage of time for an individual movement
-                basePercentage = 100 / imgCount, // work out how wide each image should be in the slidy, as a percentage.
-                position = 0, // set the initial position of the slidy element
+                basePercentage = 100 / imgCount, // work out how wide each image should be in the slide, as a percentage.
+                position = 0, // set the initial position of the slide element
                 css = document.createElement("style"); // start marking a new style sheet
             // creating css style tag
             css.type = "text/css";
-            css.id = options.slidySelector.replace('#', '') + "-css";
-            css.innerHTML += options.slidyContainerSelector + " { overflow: hidden; }\n";
-            css.innerHTML += options.slidySelector + " { text-align: left; margin: 0; font-size: 0; position: relative; width: " + (imgCount * 100) + "%;  }\n"; // set the width for the inner slider container
-            css.innerHTML += options.slidySelector + " figure { float: left; margin: 0; position: relative; display: inline-block; width: " + basePercentage + "%; height: auto; }\n"; // set the width and size pf the inner <figure> elements
-            css.innerHTML += options.slidySelector + " figure img { width: 100%; }\n";
+            css.id = options.slideSelector.replace('#', '') + "-css";
+            css.innerHTML += options.slideContainerSelector + " { overflow: hidden; }\n";
+            css.innerHTML += options.slideSelector + " { text-align: left; margin: 0; font-size: 0; position: relative; width: " + (imgCount * 100) + "%;  }\n"; // set the width for the inner slider container
+            css.innerHTML += options.slideSelector + " figure { float: left; margin: 0; position: relative; display: inline-block; width: " + basePercentage + "%; height: auto; }\n"; // set the width and size pf the inner <figure> elements
+            css.innerHTML += options.slideSelector + " figure img { width: 100%; }\n";
         if (options.captionSource == "alt" || options.captionSource == "data-caption") {
-            css.innerHTML += options.slidySelector + " figure figcaption { position: absolute; width: 100%; background-color: " + options.captionBackground + "; color: " + options.captionColor + "; font-family: " + options.captionFont + ";";
+            css.innerHTML += options.slideSelector + " figure figcaption { position: absolute; width: 100%; background-color: " + options.captionBackground + "; color: " + options.captionColor + "; font-family: " + options.captionFont + ";";
             var captions = document.getElementsByTagName("figcaption");
             var captionHeight = captions[0].offsetHeight * 2 + parseInt(window.getComputedStyle(captions[0]).fontSize, 10);
             if (options.captionPosition == "top") {
@@ -115,7 +115,7 @@
                 }
             }
             css.innerHTML += " font-size: " + options.captionSize + "; padding: " + options.captionPadding + "; " + keyframeprefix + "transition: .5s; }\n";
-            css.innerHTML += options.slidySelector + ":hover figure figcaption { opacity: 1; ";
+            css.innerHTML += options.slideSelector + ":hover figure figcaption { opacity: 1; ";
             if (options.captionPosition == "top") {
                 css.innerHTML += " top: 0px;";
             } else {
@@ -124,7 +124,7 @@
             css.innerHTML += " }\n";
             }
             css.innerHTML += "@" + keyframeprefix + "keyframes " + options.cssAnimationName + " {\n";
-            if (options.slidyDirection == "right") {
+            if (options.slideDirection == "right") {
                 for (i = imgCount - 1; i > 0; i--) { // 
                     position += slideRatio; // make the keyframe the position of the image
                     css.innerHTML += position + "% { left: -" + (i * 100) + "%; }\n";
@@ -140,8 +140,8 @@
                 }
             }
             css.innerHTML += "}\n";
-            css.innerHTML += options.slidySelector + " { ";
-            if (options.slidyDirection == "right") {
+            css.innerHTML += options.slideSelector + " { ";
+            if (options.slideDirection == "right") {
                 css.innerHTML += "left: " + imgCount * 100 + "%"
             } else {
                 css.innerHTML += "left: 0%; "
