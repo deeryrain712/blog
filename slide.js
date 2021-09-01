@@ -15,7 +15,7 @@
             captionSource: 'data-caption', // options: data-caption, alt, none
             captionBackground: 'rgba(0,0,0,0.3)',
             captionColor: '#fff',
-            captionFont: 'Avenir, Avenir Next, Droid Sans, DroidSansRegular, Corbel, Tahoma, Geneva, sans-serif',
+            captionFont: 'Quicksand, Nunito, sans-serif',
             captionPosition: 'bottom', // options: top, bottom
             captionAppear: 'slide', //  options: slide, perm, fade
             captionSize: '1.6rem', // same units
